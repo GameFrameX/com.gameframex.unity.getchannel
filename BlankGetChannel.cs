@@ -33,18 +33,17 @@ public sealed class BlankGetChannel
     public static string GetChannelName(string channelKey)
     {
         string channelName = "unknown";
-
-#if UNITY_ANDROID && !UNITY_EDITOR
-        AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.alianhome.getchannel.MainActivity");
-        channelName = androidJavaClass.CallStatic<string>("GetChannel", channelKey);
-#elif UNITY_IOS && !UNITY_EDITOR
-        channelName= getChannelName(channelKey);
-#elif UNITY_STANDALONE
+#if UNITY_STANDALONE || UNITY_EDITOR
         string channel = File.ReadAllText(Application.streamingAssetsPath + "/channel.txt");
         if (!string.IsNullOrEmpty(channel))
         {
             channelName = channel;
         }
+#elif UNITY_ANDROID
+        AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.alianhome.getchannel.MainActivity");
+        channelName = androidJavaClass.CallStatic<string>("GetChannel", channelKey);
+#elif UNITY_IOS
+        channelName= getChannelName(channelKey);
 #endif
         return channelName;
     }
