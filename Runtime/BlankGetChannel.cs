@@ -28,7 +28,7 @@ public sealed class BlankGetChannel
     /// </summary>
     public static string GetChannelName(string channelKey = "channel")
     {
-        string channelName = "unknown";
+        string channelName = "default";
 #if UNITY_STANDALONE || UNITY_EDITOR
         string path = Application.streamingAssetsPath + "/channel.txt";
         if (File.Exists(path))
