@@ -17,7 +17,7 @@
     ```json
     {
       "dependencies": {
-        "com.gameframex.unity.getchannel": "https://github.com/AlianBlank/com.gameframex.unity.getchannel.git",
+        "com.gameframex.unity.getchannel": "https://github.com/gameframex/com.gameframex.unity.getchannel.git",
         // ... 其他依赖
       }
     }
@@ -28,7 +28,7 @@
     点击左上角的 `+` 号按钮，选择 `Add package from git URL...`。
     输入以下 URL 并点击 `Add`:
     ```
-    https://github.com/AlianBlank/com.gameframex.unity.getchannel.git
+    https://github.com/gameframex/com.gameframex.unity.getchannel.git
     ```
 
 3.  **直接下载或克隆仓库：**
