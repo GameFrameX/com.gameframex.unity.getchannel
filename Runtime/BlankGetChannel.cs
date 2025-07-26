@@ -1,6 +1,7 @@
 ﻿#if UNITY_IOS
 using System.Runtime.InteropServices;
 #endif
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -23,11 +24,18 @@ public sealed class BlankGetChannel
 	private static extern string getChannelName(string channelKey);
 
 #endif
+    private static readonly Dictionary<string, string> ChannelCache = new Dictionary<string, string>();
+
     /// <summary>
     /// 获取渠道值
     /// </summary>
     public static string GetChannelName(string channelKey = "channel")
     {
+        if (ChannelCache.TryGetValue(channelKey, out var value))
+        {
+            return value;
+        }
+
         string channelName = "default";
 #if UNITY_STANDALONE || UNITY_EDITOR
         string path = Application.streamingAssetsPath + "/channel.txt";
@@ -48,6 +56,7 @@ public sealed class BlankGetChannel
 #elif UNITY_IOS
         channelName = getChannelName(channelKey);
 #endif
+        ChannelCache[channelKey] = channelName;
         return channelName;
     }
 }
