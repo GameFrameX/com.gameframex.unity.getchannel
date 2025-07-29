@@ -1,6 +1,7 @@
 ﻿#if UNITY_IOS
 using System.Runtime.InteropServices;
 #endif
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -41,10 +42,18 @@ public sealed class BlankGetChannel
         string path = Application.streamingAssetsPath + "/channel.txt";
         if (File.Exists(path))
         {
-            string channel = File.ReadAllText(Application.streamingAssetsPath + "/channel.txt");
-            if (!string.IsNullOrEmpty(channel))
+            var channelReadAllLines = File.ReadAllLines(Application.streamingAssetsPath + "/channel.txt");
+            if (channelReadAllLines.Length > 0)
             {
-                channelName = channel;
+                foreach (var line in channelReadAllLines)
+                {
+                    var split = line.Split("=", StringSplitOptions.RemoveEmptyEntries);
+                    if (split.Length > 1 && split[0] == channelKey)
+                    {
+                        channelName = split[1].Trim();
+                        break;
+                    }
+                }
             }
         }
 
