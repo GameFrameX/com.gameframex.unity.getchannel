@@ -1,3 +1,11 @@
+//
+//  GameFrameX.mm
+//
+//  Created by GameframeX(AlianBlank) on 2025/8/12.
+//  https://github.com/gameframex
+//  https://github.com/alianblank
+//
+
 #if defined (__cplusplus)
 extern "C" {
 #endif
