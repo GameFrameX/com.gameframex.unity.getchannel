@@ -47,7 +47,7 @@ public sealed class BlankGetChannel
             {
                 foreach (var line in channelReadAllLines)
                 {
-                    var split = line.Split("=", StringSplitOptions.RemoveEmptyEntries);
+                    var split = line.Split(new string[] { "=" }, StringSplitOptions.RemoveEmptyEntries);
                     if (split.Length > 1 && split[0] == channelKey)
                     {
                         channelName = split[1].Trim();
