@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/gameframex/com.gameframex.unity.getchannel/compare/1.1.0...1.2.0) (2025-12-23)
+
+
+### Features
+
+* **ci:** change ci ([2f3461a](https://github.com/gameframex/com.gameframex.unity.getchannel/commit/2f3461a928c93333dee30822de74e0a71174b856))
+
 # Changelog
 
 ## [1.1.0](https://github.com/GameFrameX/com.gameframex.unity.getchannel/tree/1.1.0) (2025-08-30)
