@@ -1,6 +1,6 @@
 # Unity 获取分发渠道号 (iOS 和 Android)
 
-本插件用于在 Unity 项目中获取 iOS 和 Android 平台的分发渠道号。它是 `https://github.com/AlianBlank/GameFrameX` 项目的一个子模块。
+本插件用于在 Unity 项目中获取 iOS 和 Android 平台的分发渠道号。它是 `https://github.com/GameFrameX/GameFrameX` 项目的一个子模块。
 
 ## 主要功能
 
