@@ -1,6 +1,9 @@
 <div align="center">
   <a href="README.md">English</a> | 
-  <a href="README_ZH.md">中文</a>
+  <b>简体中文</b> | 
+  <a href="README.zh-TW.md">繁體中文</a> | 
+  <a href="README.ja.md">日本語</a> | 
+  <a href="README.ko.md">한국어</a>
 </div>
 
 # Unity 多平台渠道号获取
@@ -9,15 +12,15 @@
 
 ## 主要功能
 
-- 支持多平台：iOS、tvOS、visionOS、Android、Editor、PC（Windows/Mac/Linux）、WebGL、UWP、PS4、PS5、Xbox One、Nintendo Switch。
+- **多平台支持**：iOS、tvOS、visionOS、Android、Editor、PC（Windows/Mac/Linux）、WebGL、UWP、PS4、PS5、Xbox One、Nintendo Switch。
 - 提供简单的 API 来获取预设的渠道信息。
-- iOS 平台在构建时自动在 `Info.plist` 中添加默认渠道号 (如果未设置)。
+- iOS 平台在构建时自动在 `Info.plist` 中添加默认渠道号（如果未设置）。
 
-## 如何安装
+## 安装
 
 您可以通过以下三种方式将此插件添加到您的 Unity 项目中：
 
-1.  **通过 `manifest.json` 添加依赖：**
+1. **通过 `manifest.json` 添加依赖：**
     在项目 `Packages` 目录下的 `manifest.json` 文件的 `dependencies` 节点中添加如下内容：
     ```json
     {
@@ -28,7 +31,7 @@
     }
     ```
 
-2.  **通过 Unity Package Manager 使用 Git URL：**
+2. **通过 Unity Package Manager 使用 Git URL：**
     在 Unity 编辑器中，打开 `Window -> Package Manager`。
     点击左上角的 `+` 号按钮，选择 `Add package from git URL...`。
     输入以下 URL 并点击 `Add`:
@@ -36,10 +39,10 @@
     https://github.com/gameframex/com.gameframex.unity.getchannel.git
     ```
 
-3.  **直接下载或克隆仓库：**
+3. **直接下载或克隆仓库：**
     将此仓库下载或克隆到您 Unity 项目的 `Packages` 目录下。Unity 会自动识别并加载该插件。
 
-## 如何使用
+## 使用方法
 
 ### 1. 获取渠道号
 
@@ -72,8 +75,8 @@ public class MyGameScript : MonoBehaviour
 ### 2. iOS / tvOS / visionOS 平台设置
 
 对于 iOS、tvOS 和 visionOS 平台，插件包含一个构建后处理器 (`PostProcessBuildHandler.cs`)。如果在构建时项目的 `Info.plist` 文件中：
--   **没有** 名为 `channel` 的键，该脚本会自动添加一个键为 `channel`，值为 `default` 的条目。
--   **已经存在** 名为 `channel` 的键，则不会进行任何修改。
+- **没有** 名为 `channel` 的键，该脚本会自动添加一个键为 `channel`，值为 `default` 的条目。
+- **已经存在** 名为 `channel` 的键，则不会进行任何修改。
 
 您可以在 Xcode 项目的 `Info.plist` 文件中修改 `channel` 的值，或者在调用 `BlankGetChannel.GetChannelName()` 时使用您自定义的键名（确保该键名存在于 `Info.plist` 中）。
 
@@ -131,9 +134,9 @@ other_key=other_value
 
 ## 注意事项
 
--   确保您在调用 `BlankGetChannel.GetChannelName(string key)` 时使用的 `key` 与您在对应平台的配置文件中设置的键名一致：
-    -   **iOS / tvOS / visionOS**：`Info.plist` 文件
-    -   **Android**：`AndroidManifest.xml` 文件中的 `<meta-data>` 标签
-    -   **Editor / PC / WebGL / UWP / 主机平台**：`Resources/app_info.txt` 文件
--   插件包含 `link.xml` 文件以防止代码被 Unity 的代码裁剪功能移除。
--   `GetChannelName()` 方法会缓存渠道信息，避免重复读取配置文件，提高性能。
+- 确保您在调用 `BlankGetChannel.GetChannelName(string key)` 时使用的 `key` 与您在对应平台的配置文件中设置的键名一致：
+    - **iOS / tvOS / visionOS**：`Info.plist` 文件
+    - **Android**：`AndroidManifest.xml` 文件中的 `<meta-data>` 标签
+    - **Editor / PC / WebGL / UWP / 主机平台**：`Resources/app_info.txt` 文件
+- 插件包含 `link.xml` 文件以防止代码被 Unity 的代码裁剪功能移除。
+- `GetChannelName()` 方法会缓存渠道信息，避免重复读取配置文件，提高性能。
