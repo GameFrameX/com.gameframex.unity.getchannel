@@ -1,12 +1,25 @@
 <div align="center">
-  <a href="README.md">English</a> | 
-  <b>简体中文</b> | 
-  <a href="README.zh-TW.md">繁體中文</a> | 
-  <a href="README.ja.md">日本語</a> | 
-  <a href="README.ko.md">한국어</a>
-</div>
+
+![GameFrameX Logo](https://download.alianblank.com/gameframex/gameframex_logo_320.png)
 
 # Unity 多平台渠道号获取
+
+[![Version](https://img.shields.io/badge/version-1.3.0-blue.svg)](https://github.com/gameframex/com.gameframex.unity.getchannel)
+[![Unity](https://img.shields.io/badge/Unity-2017.1+-green.svg)](https://unity3d.com/get-unity/download)
+[![License](https://img.shields.io/badge/license-MIT+Apache%202.0-orange.svg)](LICENSE.md)
+[![Documentation](https://img.shields.io/badge/docs-gameframex.doc.alianblank.com-brightgreen.svg)](https://gameframex.doc.alianblank.com)
+
+**独立游戏前后端一体化解决方案 · 独立游戏开发者的圆梦大使**
+
+[📖 文档](https://gameframex.doc.alianblank.com) • [🚀 快速开始](#安装) • [💬 QQ群: 467608841](https://qm.qq.com/cgi-bin/qm/qr?k=sYFd1nv6m2KZIWFLorZ5pBR0AE5ZhbuL&jump_from=webapi&authKey=oCu+uoL3n35fT5SEt7iLgGtROPxh31n/rHUxRlp0w1f+j38W4tKBuWyRH3KEdwHN)
+
+---
+
+🌐 **语言**: [English](./README.md) | [**简体中文**](./README.zh-CN.md) | [繁體中文](./README.zh-TW.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md)
+
+---
+
+</div>
 
 本插件用于在 Unity 项目中获取多平台的分发渠道号（支持 iOS、tvOS、visionOS、Android、Editor、PC、WebGL、UWP 和主机平台）。它是 `https://github.com/GameFrameX/GameFrameX` 项目的一个子模块。
 
