@@ -32,6 +32,7 @@ using UnityEngine;
 /// sub_channel=test
 /// ]]></code>
 /// </remarks>
+[UnityEngine.Scripting.Preserve]
 public sealed class BlankGetChannel
 {
 #if UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS
@@ -86,6 +87,7 @@ public sealed class BlankGetChannel
     /// string subChannel = BlankGetChannel.GetChannelName("sub_channel", "unknown");
     /// ]]></code>
     /// </example>
+    [UnityEngine.Scripting.Preserve]
     public static string GetChannelName(string channelKey = "channel", string defaultValue = "default")
     {
         if (ChannelCache.TryGetValue(channelKey, out var value))
