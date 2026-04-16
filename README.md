@@ -131,9 +131,9 @@ Then, you can retrieve this value in C# code using `BlankGetChannel.GetChannelNa
 
 ### 4. Editor / PC / WebGL / UWP / Console Platforms Setup
 
-For Editor, PC (Windows/Mac/Linux), WebGL, UWP, PS4, PS5, Xbox One, Nintendo Switch, and other platforms, you need to create a text file named `app_info.txt` in the `Resources` folder of your Unity project.
+For Editor, PC (Windows/Mac/Linux), WebGL, UWP, PS4, PS5, Xbox One, Nintendo Switch, and other platforms, you need to create a text file named `application_config.txt` in the `Resources` folder of your Unity project.
 
-**app_info.txt File Format Example:**
+**application_config.txt File Format Example:**
 
 ```
 channel=editor_cn_test
@@ -150,6 +150,6 @@ The plugin will automatically read the key-value pairs from this file and cache 
 -   Ensure that the `key` you use when calling `BlankGetChannel.GetChannelName(string key)` matches the key name you set in the corresponding platform's configuration file:
     -   **iOS / tvOS / visionOS**: `Info.plist` file
     -   **Android**: `<meta-data>` tags in `AndroidManifest.xml` file
-    -   **Editor / PC / WebGL / UWP / Console Platforms**: `Resources/app_info.txt` file
+    -   **Editor / PC / WebGL / UWP / Console Platforms**: `Resources/application_config.txt` file
 -   The plugin includes a `link.xml` file to prevent code from being removed by Unity's code stripping feature.
 -   The `GetChannelName()` method caches channel information to avoid repeated reading of configuration files, improving performance.

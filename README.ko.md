@@ -131,9 +131,9 @@ Android 플랫폼에서는 `AndroidManifest.xml` 파일에 채널 정보를 정�
 
 ### 4. Editor / PC / WebGL / UWP / 콘솔 플랫폼 설정
 
-Editor, PC（Windows/Mac/Linux）, WebGL, UWP, PS4, PS5, Xbox One, Nintendo Switch 등의 플랫폼에서는 Unity 프로젝트의 `Resources` 폴더에 `app_info.txt`라는 이름의 텍스트 파일을 만들어야 합니다.
+Editor, PC（Windows/Mac/Linux）, WebGL, UWP, PS4, PS5, Xbox One, Nintendo Switch 등의 플랫폼에서는 Unity 프로젝트의 `Resources` 폴더에 `application_config.txt`라는 이름의 텍스트 파일을 만들어야 합니다.
 
-**app_info.txt 파일 형식 예시：**
+**application_config.txt 파일 형식 예시：**
 
 ```
 channel=editor_cn_test
@@ -150,6 +150,6 @@ other_key=other_value
 - `BlankGetChannel.GetChannelName(string key)`를 호출할 때 사용하는 `key`가 해당 플랫폼의 설정 파일에 설정한 키 이름과 일치하는지 확인하세요：
     - **iOS / tvOS / visionOS**：`Info.plist` 파일
     - **Android**：`AndroidManifest.xml` 파일의 `<meta-data>` 태그
-    - **Editor / PC / WebGL / UWP / 콘솔 플랫폼**：`Resources/app_info.txt` 파일
+    - **Editor / PC / WebGL / UWP / 콘솔 플랫폼**：`Resources/application_config.txt` 파일
 - 플러그인에는 Unity의 코드 스트리핑 기능으로 인한 코드 제거를 방지하기 위해 `link.xml` 파일이 포함되어 있습니다.
 - `GetChannelName()` 메서드는 채널 정보를 캐시하여 설정 파일의 반복 읽기를 방지하고 성능을 향상시킵니다.

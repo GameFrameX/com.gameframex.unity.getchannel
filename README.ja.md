@@ -131,9 +131,9 @@ Android プラットフォームでは、`AndroidManifest.xml` ファイルで�
 
 ### 4. Editor / PC / WebGL / UWP / コンソールプラットフォーム設定
 
-Editor、PC（Windows/Mac/Linux）、WebGL、UWP、PS4、PS5、Xbox One、Nintendo Switch などのプラットフォームでは、Unity プロジェクトの `Resources` フォルダに `app_info.txt` という名前のテキストファイルを作成する必要があります。
+Editor、PC（Windows/Mac/Linux）、WebGL、UWP、PS4、PS5、Xbox One、Nintendo Switch などのプラットフォームでは、Unity プロジェクトの `Resources` フォルダに `application_config.txt` という名前のテキストファイルを作成する必要があります。
 
-**app_info.txt ファイル形式の例：**
+**application_config.txt ファイル形式の例：**
 
 ```
 channel=editor_cn_test
@@ -150,6 +150,6 @@ other_key=other_value
 - `BlankGetChannel.GetChannelName(string key)` を呼び出す際、使用する `key` が対応プラットフォームの設定ファイルで設定したキー名と一致していることを確認してください：
     - **iOS / tvOS / visionOS**：`Info.plist` ファイル
     - **Android**：`AndroidManifest.xml` ファイルの `<meta-data>` タグ
-    - **Editor / PC / WebGL / UWP / コンソールプラットフォーム**：`Resources/app_info.txt` ファイル
+    - **Editor / PC / WebGL / UWP / コンソールプラットフォーム**：`Resources/application_config.txt` ファイル
 - プラグインには `link.xml` ファイルが含まれており、Unity のコードストリッピング機能によるコード削除を防ぎます。
 - `GetChannelName()` メソッドはチャンネル情報をキャッシュし、設定ファイルの繰り返し読み込みを回避してパフォーマンスを向上させます。

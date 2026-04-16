@@ -131,9 +131,9 @@ public class MyGameScript : MonoBehaviour
 
 ### 4. Editor / PC / WebGL / UWP / 主機平台設定
 
-對於 Editor、PC（Windows/Mac/Linux）、WebGL、UWP、PS4、PS5、Xbox One、Nintendo Switch 等平台，您需要在 Unity 專案的 `Resources` 資料夾下建立一個名為 `app_info.txt` 的文字檔案。
+對於 Editor、PC（Windows/Mac/Linux）、WebGL、UWP、PS4、PS5、Xbox One、Nintendo Switch 等平台，您需要在 Unity 專案的 `Resources` 資料夾下建立一個名為 `application_config.txt` 的文字檔案。
 
-**app_info.txt 檔案格式範例：**
+**application_config.txt 檔案格式範例：**
 
 ```
 channel=editor_cn_test
@@ -150,6 +150,6 @@ other_key=other_value
 - 確保您在呼叫 `BlankGetChannel.GetChannelName(string key)` 時使用的 `key` 與您在對應平台的設定檔案中設定的鍵名一致：
     - **iOS / tvOS / visionOS**：`Info.plist` 檔案
     - **Android**：`AndroidManifest.xml` 檔案中的 `<meta-data>` 標籤
-    - **Editor / PC / WebGL / UWP / 主機平台**：`Resources/app_info.txt` 檔案
+    - **Editor / PC / WebGL / UWP / 主機平台**：`Resources/application_config.txt` 檔案
 - 插件包含 `link.xml` 檔案以防止程式碼被 Unity 的程式碼裁剪功能移除。
 - `GetChannelName()` 方法會快取渠道資訊，避免重複讀取設定檔案，提高效能。
