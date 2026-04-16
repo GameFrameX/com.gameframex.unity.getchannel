@@ -25,10 +25,11 @@ using UnityEngine;
 /// <string>ios_cn_xxx</string>
 /// ]]></code>
 ///
-/// <para><b>Editor/PC 平台配置：</b></para>
-/// 在 StreamingAssets 文件夹下创建 channel.txt 文件，格式如下：
+/// <para><b>Editor/PC/WebGL 平台配置：</b></para>
+/// 在 Resources 文件夹下创建 app_info.txt 文件，格式如下：
 /// <code><![CDATA[
 /// channel=editor_cn_test
+/// sub_channel=test
 /// ]]></code>
 /// </remarks>
 public sealed class BlankGetChannel
@@ -67,10 +68,10 @@ public sealed class BlankGetChannel
     /// <description>Info.plist 中的键值对</description>
     /// </item>
     /// <item>
-    /// <term>Editor/PC</term>
-    /// <description>StreamingAssets/channel.txt 文件</description>
-    /// </item>
-    /// </list>
+/// <term>Editor/PC/WebGL</term>
+/// <description>Resources/app_info.txt 文件</description>
+/// </item>
+/// </list>
     /// </remarks>
     /// <param name="channelKey">渠道键名，默认为 "channel"</param>
     /// <param name="defaultValue">当未找到渠道配置时返回的默认值，默认为 "default"</param>
@@ -93,26 +94,7 @@ public sealed class BlankGetChannel
         }
 
         string channelName = defaultValue;
-#if UNITY_STANDALONE || UNITY_EDITOR
-        string path = Application.streamingAssetsPath + "/channel.txt";
-        if (File.Exists(path))
-        {
-            var channelReadAllLines = File.ReadAllLines(Application.streamingAssetsPath + "/channel.txt");
-            if (channelReadAllLines.Length > 0)
-            {
-                foreach (var line in channelReadAllLines)
-                {
-                    var split = line.Split(new string[] { "=" }, StringSplitOptions.RemoveEmptyEntries);
-                    if (split.Length > 1 && split[0] == channelKey)
-                    {
-                        channelName = split[1].Trim();
-                        break;
-                    }
-                }
-            }
-        }
-
-#elif UNITY_WEBGL
+#if UNITY_STANDALONE || UNITY_EDITOR || UNITY_WEBGL
         var textAsset = Resources.Load<TextAsset>("app_info");
         if (textAsset != null)
         {
