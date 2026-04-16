@@ -26,7 +26,7 @@ using UnityEngine;
 /// ]]></code>
 ///
 /// <para><b>Editor/PC/WebGL/UWP/主机平台配置：</b></para>
-/// 在 Resources 文件夹下创建 app_info.txt 文件，格式如下：
+/// 在 Resources 文件夹下创建 application_config.txt 文件，格式如下：
 /// <code><![CDATA[
 /// channel=editor_cn_test
 /// sub_channel=test
@@ -69,10 +69,10 @@ public sealed class BlankGetChannel
     /// <description>Info.plist 中的键值对</description>
     /// </item>
     /// <item>
-    /// <term>Editor/PC/WebGL/UWP/主机平台</term>
-    /// <description>Resources/app_info.txt 文件</description>
-    /// </item>
-    /// </list>
+/// <term>Editor/PC/WebGL/UWP/主机平台</term>
+/// <description>Resources/application_config.txt 文件</description>
+/// </item>
+/// </list>
     /// </remarks>
     /// <param name="channelKey">渠道键名，默认为 "channel"</param>
     /// <param name="defaultValue">当未找到渠道配置时返回的默认值，默认为 "default"</param>
@@ -97,7 +97,7 @@ public sealed class BlankGetChannel
 
         string channelName = defaultValue;
 #if UNITY_STANDALONE || UNITY_EDITOR || UNITY_WEBGL || UNITY_WSA || UNITY_PS4 || UNITY_PS5 || UNITY_XBOXONE || UNITY_SWITCH
-        var textAsset = Resources.Load<TextAsset>("app_info");
+        var textAsset = Resources.Load<TextAsset>("application_config");
         if (textAsset != null)
         {
             var lines = textAsset.text.Split(new string[] { "\n", "\r", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
