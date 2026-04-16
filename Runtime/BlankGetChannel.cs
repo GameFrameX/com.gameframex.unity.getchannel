@@ -46,7 +46,7 @@ public sealed class BlankGetChannel
     /// <summary>
     /// 渠道信息缓存字典，用于避免重复读取配置
     /// </summary>
-    private static readonly Dictionary<string, string> ChannelCache = new Dictionary<string, string>();
+    private static readonly Dictionary<string, string> ChannelCache = new Dictionary<string, string>(32);
 
     /// <summary>
     /// 获取指定渠道键对应的渠道名称
