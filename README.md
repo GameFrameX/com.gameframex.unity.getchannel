@@ -3,9 +3,9 @@
   <a href="README_ZH.md">中文</a>
 </div>
 
-# Unity Get Channel for iOS and Android
+# Unity Get Channel for Multiple Platforms
 
-This plugin is used to retrieve distribution channel identifiers for iOS and Android platforms in Unity projects. It is a submodule of the `https://github.com/GameFrameX/GameFrameX` project.
+This plugin is used to retrieve distribution channel identifiers for multiple platforms in Unity projects (iOS, tvOS, visionOS, Android, Editor, PC, WebGL, UWP, and consoles). It is a submodule of the `https://github.com/GameFrameX/GameFrameX` project.
 
 ## Features
 

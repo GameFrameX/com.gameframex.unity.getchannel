@@ -3,9 +3,9 @@
   <a href="README_ZH.md">中文</a>
 </div>
 
-# Unity 获取分发渠道号 (iOS 和 Android)
+# Unity 多平台渠道号获取
 
-本插件用于在 Unity 项目中获取 iOS 和 Android 平台的分发渠道号。它是 `https://github.com/GameFrameX/GameFrameX` 项目的一个子模块。
+本插件用于在 Unity 项目中获取多平台的分发渠道号（支持 iOS、tvOS、visionOS、Android、Editor、PC、WebGL、UWP 和主机平台）。它是 `https://github.com/GameFrameX/GameFrameX` 项目的一个子模块。
 
 ## 主要功能
 
