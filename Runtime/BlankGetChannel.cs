@@ -1,4 +1,4 @@
-﻿#if UNITY_IOS
+﻿#if UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS
 using System.Runtime.InteropServices;
 #endif
 using System;
@@ -18,14 +18,14 @@ using UnityEngine;
 /// <meta-data android:name="channel" android:value="android_cn_taptap" />
 /// ]]></code>
 ///
-/// <para><b>iOS 平台配置：</b></para>
+/// <para><b>iOS/tvOS/visionOS 平台配置：</b></para>
 /// 需要在 Info.plist 中添加以下键值对（String 类型）：
 /// <code><![CDATA[
 /// <key>channel</key>
 /// <string>ios_cn_xxx</string>
 /// ]]></code>
 ///
-/// <para><b>Editor/PC/WebGL 平台配置：</b></para>
+/// <para><b>Editor/PC/WebGL/UWP/主机平台配置：</b></para>
 /// 在 Resources 文件夹下创建 app_info.txt 文件，格式如下：
 /// <code><![CDATA[
 /// channel=editor_cn_test
@@ -34,9 +34,9 @@ using UnityEngine;
 /// </remarks>
 public sealed class BlankGetChannel
 {
-#if UNITY_IOS
+#if UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS
 	/// <summary>
-	/// iOS 平台原生方法：从 Info.plist 中获取渠道名称
+	/// iOS/tvOS/visionOS 平台原生方法：从 Info.plist 中获取渠道名称
 	/// </summary>
 	/// <param name="channelKey">渠道键名，默认为 "channel"</param>
 	/// <returns>渠道名称</returns>
@@ -64,14 +64,14 @@ public sealed class BlankGetChannel
     /// <description>AndroidManifest.xml 中的 meta-data</description>
     /// </item>
     /// <item>
-    /// <term>iOS</term>
+    /// <term>iOS/tvOS/visionOS</term>
     /// <description>Info.plist 中的键值对</description>
     /// </item>
     /// <item>
-/// <term>Editor/PC/WebGL</term>
-/// <description>Resources/app_info.txt 文件</description>
-/// </item>
-/// </list>
+    /// <term>Editor/PC/WebGL/UWP/主机平台</term>
+    /// <description>Resources/app_info.txt 文件</description>
+    /// </item>
+    /// </list>
     /// </remarks>
     /// <param name="channelKey">渠道键名，默认为 "channel"</param>
     /// <param name="defaultValue">当未找到渠道配置时返回的默认值，默认为 "default"</param>
@@ -94,7 +94,7 @@ public sealed class BlankGetChannel
         }
 
         string channelName = defaultValue;
-#if UNITY_STANDALONE || UNITY_EDITOR || UNITY_WEBGL
+#if UNITY_STANDALONE || UNITY_EDITOR || UNITY_WEBGL || UNITY_WSA || UNITY_PS4 || UNITY_PS5 || UNITY_XBOXONE || UNITY_SWITCH
         var textAsset = Resources.Load<TextAsset>("app_info");
         if (textAsset != null)
         {
@@ -124,7 +124,7 @@ public sealed class BlankGetChannel
         {
             channelName = androidJavaClass.CallStatic<string>("GetChannel", channelKey);
         }
-#elif UNITY_IOS
+#elif UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS
         channelName = getChannelName(channelKey);
 #endif
         ChannelCache[channelKey] = channelName;
