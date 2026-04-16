@@ -112,6 +112,31 @@ public sealed class BlankGetChannel
             }
         }
 
+#elif UNITY_WEBGL
+        var textAsset = Resources.Load<TextAsset>("app_info");
+        if (textAsset != null)
+        {
+            var lines = textAsset.text.Split(new string[] { "\n", "\r", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var line in lines)
+            {
+                var split = line.Split(new string[] { "=" }, StringSplitOptions.RemoveEmptyEntries);
+                if (split.Length > 1)
+                {
+                    var key = split[0].Trim();
+                    var channelValue = split[1].Trim();
+                    ChannelCache[key] = channelValue;
+                }
+            }
+        }
+        else
+        {
+            ChannelCache[channelKey] = defaultValue;
+        }
+
+        if (ChannelCache.TryGetValue(channelKey, out value))
+        {
+            return value;
+        }
 #elif UNITY_ANDROID
         using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.alianhome.getchannel.MainActivity"))
         {
