@@ -1,3 +1,20 @@
+# [1.3.0](https://github.com/gameframex/com.gameframex.unity.getchannel/compare/1.2.0...1.3.0) (2026-04-16)
+
+
+### Bug Fixes
+
+* 为BlankGetChannel类和方法添加Preserve属性 ([a16bc05](https://github.com/gameframex/com.gameframex.unity.getchannel/commit/a16bc0546fc7cd6aedc44a494ddc1e1b12a3bebf))
+
+
+### Features
+
+* **WebGL:** 增加从Resources加载渠道信息支持 ([3b7f90a](https://github.com/gameframex/com.gameframex.unity.getchannel/commit/3b7f90a83564fd00d63f4da69679da31db5524c0))
+
+
+### Performance Improvements
+
+* 为渠道缓存字典指定初始容量以减少扩容开销 ([d5fd1dc](https://github.com/gameframex/com.gameframex.unity.getchannel/commit/d5fd1dc3a7c9372e81474c8c664c88cebbe44213))
+
 # [1.2.0](https://github.com/gameframex/com.gameframex.unity.getchannel/compare/1.1.0...1.2.0) (2025-12-23)
 
 
