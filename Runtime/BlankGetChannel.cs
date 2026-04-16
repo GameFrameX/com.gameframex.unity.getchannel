@@ -7,26 +7,26 @@ using System.IO;
 using UnityEngine;
 
 /// <summary>
-/// 渠道信息获取工具类
+/// 渠道信息获取工具类。
 /// </summary>
 /// <remarks>
-/// 用于在Unity应用中获取当前运行平台的渠道信息。
+/// Utility class for retrieving channel information in Unity applications.
 ///
-/// <para><b>Android 平台配置：</b></para>
-/// 需要在主启动的 Activity 中添加以下 meta-data 标签：
+/// <para><b>Android Platform Configuration:</b></para>
+/// Add the following meta-data tag to the main launch Activity:
 /// <code><![CDATA[
 /// <meta-data android:name="channel" android:value="android_cn_taptap" />
 /// ]]></code>
 ///
-/// <para><b>iOS/tvOS/visionOS 平台配置：</b></para>
-/// 需要在 Info.plist 中添加以下键值对（String 类型）：
+/// <para><b>iOS/tvOS/visionOS Platform Configuration:</b></para>
+/// Add the following key-value pair (String type) to Info.plist:
 /// <code><![CDATA[
 /// <key>channel</key>
 /// <string>ios_cn_xxx</string>
 /// ]]></code>
 ///
-/// <para><b>Editor/PC/WebGL/UWP/主机平台配置：</b></para>
-/// 在 Resources 文件夹下创建 application_config.txt 文件，格式如下：
+/// <para><b>Editor/PC/WebGL/UWP/Console Platform Configuration:</b></para>
+/// Create an application_config.txt file in the Resources folder with the following format:
 /// <code><![CDATA[
 /// channel=editor_cn_test
 /// sub_channel=test
@@ -37,46 +37,53 @@ public sealed class BlankGetChannel
 {
 #if UNITY_IOS || UNITY_TVOS || UNITY_VISIONOS
 	/// <summary>
-	/// iOS/tvOS/visionOS 平台原生方法：从 Info.plist 中获取渠道名称
+	/// iOS/tvOS/visionOS 平台原生方法：从 Info.plist 中获取渠道名称。
 	/// </summary>
-	/// <param name="channelKey">渠道键名，默认为 "channel"</param>
-	/// <returns>渠道名称</returns>
+	/// <remarks>
+	/// iOS/tvOS/visionOS platform native method: retrieves channel name from Info.plist.
+	/// </remarks>
+	/// <param name="channelKey">渠道键名，默认为 "channel" / Channel key name, defaults to "channel"</param>
+	/// <returns>渠道名称 / Channel name</returns>
 	[DllImport("__Internal")]
 	private static extern string getChannelName(string channelKey);
 
 #endif
     /// <summary>
-    /// 渠道信息缓存字典，用于避免重复读取配置
+    /// 渠道信息缓存字典，用于避免重复读取配置。
     /// </summary>
+    /// <remarks>
+    /// Channel information cache dictionary, used to avoid repeated configuration reads.
+    /// </remarks>
     private static readonly Dictionary<string, string> ChannelCache = new Dictionary<string, string>(32);
 
     /// <summary>
-    /// 获取指定渠道键对应的渠道名称
+    /// 获取指定渠道键对应的渠道名称。
     /// </summary>
     /// <remarks>
-    /// 该方法会根据当前运行平台从相应的配置源读取渠道信息，并使用缓存避免重复读取。
+    /// Retrieves the channel name for the specified channel key based on the current
+    /// platform's configuration source, using cache to avoid repeated reads.
     /// <list type="table">
     /// <listheader>
-    /// <term>平台</term>
-    /// <description>配置源</description>
+    /// <term>Platform</term>
+    /// <description>Configuration Source</description>
     /// </listheader>
     /// <item>
     /// <term>Android</term>
-    /// <description>AndroidManifest.xml 中的 meta-data</description>
+    /// <description>meta-data in AndroidManifest.xml</description>
     /// </item>
     /// <item>
     /// <term>iOS/tvOS/visionOS</term>
-    /// <description>Info.plist 中的键值对</description>
+    /// <description>Key-value pairs in Info.plist</description>
     /// </item>
     /// <item>
-/// <term>Editor/PC/WebGL/UWP/主机平台</term>
-/// <description>Resources/application_config.txt 文件</description>
-/// </item>
-/// </list>
+    /// <term>Editor/PC/WebGL/UWP/Console</term>
+    /// <description>Resources/application_config.txt file</description>
+    /// </item>
+    /// </list>
     /// </remarks>
-    /// <param name="channelKey">渠道键名，默认为 "channel"</param>
-    /// <param name="defaultValue">当未找到渠道配置时返回的默认值，默认为 "default"</param>
-    /// <returns>渠道名称，如果未配置则返回 <paramref name="defaultValue"/></returns>
+    /// <param name="channelKey">渠道键名，默认为 "channel" / Channel key name, defaults to "channel"</param>
+    /// <param name="defaultValue">当未找到渠道配置时返回的默认值，默认为 "default" / Default value returned when channel configuration is not found, defaults to "default"</param>
+    /// <returns>渠道名称，如果未配置则返回 <paramref name="defaultValue"/> / Channel name, or <paramref name="defaultValue"/> if not configured</returns>
     /// <example>
     /// 以下示例展示如何获取渠道名称：
     /// <code><![CDATA[
