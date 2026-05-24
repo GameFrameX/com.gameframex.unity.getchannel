@@ -4,7 +4,7 @@
 
 # Unity 多平台渠道号获取
 
-[![Version](https://img.shields.io/badge/version-1.3.0-blue.svg)](https://github.com/gameframex/com.gameframex.unity.getchannel)
+[![Version](https://img.shields.io/github/v/release/GameFrameX/com.gameframex.unity.getchannel)](https://github.com/GameFrameX/com.gameframex.unity.getchannel/releases)
 [![Unity](https://img.shields.io/badge/Unity-2017.1+-green.svg)](https://unity3d.com/get-unity/download)
 [![License](https://img.shields.io/badge/license-MIT+Apache%202.0-orange.svg)](LICENSE.md)
 [![Documentation](https://img.shields.io/badge/docs-gameframex.doc.alianblank.com-brightgreen.svg)](https://gameframex.doc.alianblank.com)
