@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/gameframex/com.gameframex.unity.getchannel/compare/1.3.0...1.3.1) (2026-05-28)
+
+
+### Bug Fixes
+
+* **ci:** 统一 .github 工作流配置 ([4ffb03b](https://github.com/gameframex/com.gameframex.unity.getchannel/commit/4ffb03b29f5c7f7b7bbc5c2da029accc56115460))
+
 # [1.3.0](https://github.com/gameframex/com.gameframex.unity.getchannel/compare/1.2.0...1.3.0) (2026-04-16)
 
 

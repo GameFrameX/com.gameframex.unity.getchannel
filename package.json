@@ -1,7 +1,7 @@
 {
   "name": "com.gameframex.unity.getchannel",
   "displayName": "Game Frame X Get Channel",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "unity": "2019.4",
   "description": "GameFrameX GetChannel — cross-platform channel identifier package. Reads the application's distribution channel at runtime from platform-specific sources: Android (AndroidManifest meta-data), iOS (Info.plist via P/Invoke), Editor/PC (Resources config file). Docs: https://gameframex.doc.alianblank.com\n\nGameFrameX GetChannel — 跨平台渠道标识功能包。在运行时从平台特定来源读取应用的分发渠道：Android（AndroidManifest meta-data）、iOS（通过 P/Invoke 读取 Info.plist）、Editor/PC（Resources 配置文件）。文档：https://gameframex.doc.alianblank.com",
   "author": {
