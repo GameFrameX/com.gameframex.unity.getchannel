@@ -27,7 +27,9 @@ All-in-One Solution for Indie Game Development · Empowering Indie Developers' D
 - Provides a simple API to retrieve predefined channel information.
 - Automatically adds a default channel to `Info.plist` during iOS builds (if not already set).
 
-## Installation
+## Quick Start
+
+### Installation
 
 ### Installation
 
@@ -60,7 +62,7 @@ Then add the package to `dependencies`:
 ```
 
 
-## Usage
+## Usage Examples
 
 ### 1. Getting Channel Information
 
