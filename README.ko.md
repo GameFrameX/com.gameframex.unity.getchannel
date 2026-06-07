@@ -1,28 +1,24 @@
 <div align="center">
 
-![GameFrameX Logo](https://download.alianblank.com/gameframex/gameframex_logo_320.png)
+<img src="https://download.alianblank.com/gameframex/gameframex_logo_320.png" alt="Game Frame X Logo" width="160" />
 
 # Unity 멀티 플랫폼 채널 가져오기
 
+[![License](https://img.shields.io/github/license/GameFrameX/com.gameframex.unity.getchannel)](https://github.com/GameFrameX/com.gameframex.unity.getchannel/blob/main/LICENSE.md)
 [![Version](https://img.shields.io/github/v/release/GameFrameX/com.gameframex.unity.getchannel)](https://github.com/GameFrameX/com.gameframex.unity.getchannel/releases)
-[![Unity](https://img.shields.io/badge/Unity-2017.1+-green.svg)](https://unity3d.com/get-unity/download)
-[![License](https://img.shields.io/badge/license-MIT+Apache%202.0-orange.svg)](LICENSE.md)
-[![Documentation](https://img.shields.io/badge/docs-gameframex.doc.alianblank.com-brightgreen.svg)](https://gameframex.doc.alianblank.com)
+[![Documentation](https://img.shields.io/badge/Documentation-docs-blue)](https://gameframex.doc.alianblank.com)
 
-**인디 게임 개발자를 위한 올인원 솔루션 · 인디 개발자의 꿈을 실현**
+인디 게임 개발자를 위한 올인원 솔루션 · 인디 개발자의 꿈을 실현
 
-[📖 문서](https://gameframex.doc.alianblank.com) • [🚀 빠른 시작](#설치) • [💬 QQ 그룹: 467608841](https://qm.qq.com/cgi-bin/qm/qr?k=sYFd1nv6m2KZIWFLorZ5pBR0AE5ZhbuL&jump_from=webapi&authKey=oCu+uoL3n35fT5SEt7iLgGtROPxh31n/rHUxRlp0w1f+j38W4tKBuWyRH3KEdwHN)
+<br />
 
----
+[문서](https://gameframex.doc.alianblank.com) · [빠른 시작](#quick-start) · [QQ 그룹](https://qm.qq.com/q/5U9Fvebw)
 
-🌐 **언어**: [English](./README.md) | [简体中文](./README.zh-CN.md) | [繁體中文](./README.zh-TW.md) | [日本語](./README.ja.md) | [**한국어**](./README.ko.md)
+<br />
 
----
+[English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | **한국어**
 
 </div>
-
-이 플러그인은 Unity 프로젝트에서 멀티 플랫폼의 배포 채널 식별자를 가져오는 데 사용됩니다（iOS, tvOS, visionOS, Android, Editor, PC, WebGL, UWP 및 콘솔 플랫폼 지원）. `https://github.com/GameFrameX/GameFrameX` 프로젝트의 서브모듈입니다.
-
 ## 기능
 
 - **멀티 플랫폼 지원**: iOS, tvOS, visionOS, Android, Editor, PC（Windows/Mac/Linux）, WebGL, UWP, PS4, PS5, Xbox One, Nintendo Switch.

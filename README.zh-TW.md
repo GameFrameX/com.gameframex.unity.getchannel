@@ -1,28 +1,24 @@
 <div align="center">
 
-![GameFrameX Logo](https://download.alianblank.com/gameframex/gameframex_logo_320.png)
+<img src="https://download.alianblank.com/gameframex/gameframex_logo_320.png" alt="Game Frame X Logo" width="160" />
 
 # Unity 多平台渠道號獲取
 
+[![License](https://img.shields.io/github/license/GameFrameX/com.gameframex.unity.getchannel)](https://github.com/GameFrameX/com.gameframex.unity.getchannel/blob/main/LICENSE.md)
 [![Version](https://img.shields.io/github/v/release/GameFrameX/com.gameframex.unity.getchannel)](https://github.com/GameFrameX/com.gameframex.unity.getchannel/releases)
-[![Unity](https://img.shields.io/badge/Unity-2017.1+-green.svg)](https://unity3d.com/get-unity/download)
-[![License](https://img.shields.io/badge/license-MIT+Apache%202.0-orange.svg)](LICENSE.md)
-[![Documentation](https://img.shields.io/badge/docs-gameframex.doc.alianblank.com-brightgreen.svg)](https://gameframex.doc.alianblank.com)
+[![Documentation](https://img.shields.io/badge/Documentation-docs-blue)](https://gameframex.doc.alianblank.com)
 
-**獨立遊戲前後端一體化解決方案 · 獨立遊戲開發者的圓夢大使**
+獨立遊戲前後端一體化解決方案 · 獨立遊戲開發者的圓夢大使
 
-[📖 文檔](https://gameframex.doc.alianblank.com) • [🚀 快速開始](#安裝) • [💬 QQ群: 467608841](https://qm.qq.com/cgi-bin/qm/qr?k=sYFd1nv6m2KZIWFLorZ5pBR0AE5ZhbuL&jump_from=webapi&authKey=oCu+uoL3n35fT5SEt7iLgGtROPxh31n/rHUxRlp0w1f+j38W4tKBuWyRH3KEdwHN)
+<br />
 
----
+[文檔](https://gameframex.doc.alianblank.com) · [快速開始](#quick-start) · [QQ群](https://qm.qq.com/q/5U9Fvebw)
 
-🌐 **語言**: [English](./README.md) | [简体中文](./README.zh-CN.md) | [**繁體中文**](./README.zh-TW.md) | [日本語](./README.ja.md) | [한국어](./README.ko.md)
+<br />
 
----
+[English](README.md) | [简体中文](README.zh-CN.md) | **繁體中文** | [日本語](README.ja.md) | [한국어](README.ko.md)
 
 </div>
-
-本插件用於在 Unity 專案中獲取多平台的分發渠道號（支援 iOS、tvOS、visionOS、Android、Editor、PC、WebGL、UWP 和主機平台）。它是 `https://github.com/GameFrameX/GameFrameX` 專案的一個子模組。
-
 ## 主要功能
 
 - **多平台支援**：iOS、tvOS、visionOS、Android、Editor、PC（Windows/Mac/Linux）、WebGL、UWP、PS4、PS5、Xbox One、Nintendo Switch。
