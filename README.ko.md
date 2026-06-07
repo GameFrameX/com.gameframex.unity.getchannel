@@ -29,29 +29,36 @@
 
 ## 설치
 
-다음 세 가지 방법 중 하나로 이 플러그인을 Unity 프로젝트에 추가할 수 있습니다：
+### 설치
 
-1. **`manifest.json`을 통한 추가：**
-    프로젝트 `Packages` 디렉토리의 `manifest.json` 파일에 있는 `dependencies` 노드에 다음을 추가하세요：
-    ```json
+Unity 프로젝트의 `Packages/manifest.json`을 편집하여 `scopedRegistries` 섹션을 추가하세요:
+
+```json
+{
+  "scopedRegistries": [
     {
-      "dependencies": {
-        "com.gameframex.unity.getchannel": "https://github.com/gameframex/com.gameframex.unity.getchannel.git",
-        // ... 기타 종속성
-      }
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
     }
-    ```
+  ]
+}
+```
 
-2. **Unity Package Manager에서 Git URL 사용：**
-    Unity 에디터에서 `Window -> Package Manager`를 엽니다.
-    좌측 상단의 `+` 버튼을 클릭하고 `Add package from git URL...`을 선택합니다.
-    다음 URL을 입력하고 `Add`를 클릭하세요：
-    ```
-    https://github.com/gameframex/com.gameframex.unity.getchannel.git
-    ```
+`scopes`는 이 레지스트리를 통해 어떤 패키지를 해석할지 제어합니다. `com.gameframex`로 시작하는 패키지만 이 레지스트리에서 가져옵니다.
 
-3. **저장소 다운로드 또는 복제：**
-    이 저장소를 Unity 프로젝트의 `Packages` 디렉토리에 다운로드하거나 복제하세요. Unity가 자동으로 인식하여 플러그인을 로드합니다.
+Then add the package to `dependencies`:
+
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.getchannel": "1.3.2"
+  }
+}
+```
+
 
 ## 사용 방법
 

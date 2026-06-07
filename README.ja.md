@@ -29,29 +29,36 @@
 
 ## インストール
 
-以下の3つの方法で、このプラグインを Unity プロジェクトに追加できます：
+### インストール
 
-1. **`manifest.json` 経由で追加：**
-    プロジェクトの `Packages` ディレクトリにある `manifest.json` ファイルの `dependencies` ノードに以下を追加してください：
-    ```json
+Unity プロジェクトの `Packages/manifest.json` を編集し、`scopedRegistries` セクションを追加してください：
+
+```json
+{
+  "scopedRegistries": [
     {
-      "dependencies": {
-        "com.gameframex.unity.getchannel": "https://github.com/gameframex/com.gameframex.unity.getchannel.git",
-        // ... その他の依存関係
-      }
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
     }
-    ```
+  ]
+}
+```
 
-2. **Unity Package Manager で Git URL を使用：**
-    Unity エディタで `Window -> Package Manager` を開きます。
-    左上の `+` ボタンをクリックし、`Add package from git URL...` を選択します。
-    以下の URL を入力して `Add` をクリックしてください：
-    ```
-    https://github.com/gameframex/com.gameframex.unity.getchannel.git
-    ```
+`scopes` は、どのパッケージをこのレジストリから解決するかを制御します。`com.gameframex` で始まるパッケージのみがこのレジストリから取得されます。
 
-3. **リポジトリのダウンロードまたはクローン：**
-    このリポジトリを Unity プロジェクトの `Packages` ディレクトリにダウンロードまたはクローンしてください。Unity が自動的に認識してプラグインを読み込みます。
+Then add the package to `dependencies`:
+
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.getchannel": "1.3.2"
+  }
+}
+```
+
 
 ## 使用方法
 

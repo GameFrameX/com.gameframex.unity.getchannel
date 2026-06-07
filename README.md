@@ -29,29 +29,36 @@ All-in-One Solution for Indie Game Development · Empowering Indie Developers' D
 
 ## Installation
 
-You can add this plugin to your Unity project in one of the following three ways:
+### Installation
 
-1. **Add via `manifest.json`:**
-    Add the following to the `dependencies` node in the `manifest.json` file in your project's `Packages` directory:
-    ```json
+Edit your Unity project's `Packages/manifest.json` and add the `scopedRegistries` section:
+
+```json
+{
+  "scopedRegistries": [
     {
-      "dependencies": {
-        "com.gameframex.unity.getchannel": "https://github.com/gameframex/com.gameframex.unity.getchannel.git",
-        // ... other dependencies
-      }
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
     }
-    ```
+  ]
+}
+```
 
-2. **Via Unity Package Manager using Git URL:**
-    In the Unity Editor, open `Window -> Package Manager`.
-    Click the `+` button in the top-left corner and select `Add package from git URL...`.
-    Enter the following URL and click `Add`:
-    ```
-    https://github.com/gameframex/com.gameframex.unity.getchannel.git
-    ```
+`scopes` controls which packages are resolved through this registry. Only packages whose names start with `com.gameframex` will be fetched from it.
 
-3. **Download or Clone Repository:**
-    Download or clone this repository into the `Packages` directory of your Unity project. Unity will automatically recognize and load the plugin.
+Then add the package to `dependencies`:
+
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.getchannel": "1.3.2"
+  }
+}
+```
+
 
 ## Usage
 

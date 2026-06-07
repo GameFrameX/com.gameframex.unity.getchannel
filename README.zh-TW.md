@@ -29,29 +29,36 @@
 
 ## 安裝
 
-您可以透過以下三種方式將此插件添加到您的 Unity 專案中：
+### 安裝
 
-1. **透過 `manifest.json` 添加依賴：**
-    在專案 `Packages` 目錄下的 `manifest.json` 檔案的 `dependencies` 節點中添加如下內容：
-    ```json
+編輯 Unity 專案的 `Packages/manifest.json`，添加 `scopedRegistries` 部分：
+
+```json
+{
+  "scopedRegistries": [
     {
-      "dependencies": {
-        "com.gameframex.unity.getchannel": "https://github.com/gameframex/com.gameframex.unity.getchannel.git",
-        // ... 其他依賴
-      }
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
     }
-    ```
+  ]
+}
+```
 
-2. **透過 Unity Package Manager 使用 Git URL：**
-    在 Unity 編輯器中，開啟 `Window -> Package Manager`。
-    點擊左上角的 `+` 號按鈕，選擇 `Add package from git URL...`。
-    輸入以下 URL 並點擊 `Add`：
-    ```
-    https://github.com/gameframex/com.gameframex.unity.getchannel.git
-    ```
+`scopes` 控制哪些套件透過此註冊表解析。只有以 `com.gameframex` 開頭的套件才會從這個註冊表取得。
 
-3. **直接下載或複製儲存庫：**
-    將此儲存庫下載或複製到您 Unity 專案的 `Packages` 目錄下。Unity 會自動識別並載入該插件。
+Then add the package to `dependencies`:
+
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.getchannel": "1.3.2"
+  }
+}
+```
+
 
 ## 使用方法
 
