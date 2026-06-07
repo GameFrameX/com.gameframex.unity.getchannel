@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/gameframex/com.gameframex.unity.getchannel/compare/1.3.1...1.3.2) (2026-06-07)
+
+
+### Bug Fixes
+
+* 统一 LICENSE.md 为 Apache 2.0 (自有仓库) ([236e939](https://github.com/gameframex/com.gameframex.unity.getchannel/commit/236e93961f62d20ccb5c098796dec00e20813405))
+
 ## [1.3.1](https://github.com/gameframex/com.gameframex.unity.getchannel/compare/1.3.0...1.3.1) (2026-05-28)
 
 
